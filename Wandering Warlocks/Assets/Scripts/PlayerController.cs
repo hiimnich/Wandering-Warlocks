@@ -26,21 +26,26 @@ public class PlayerController : MonoBehaviour
 
     void movePlayer()
     {
-            Vector3 movement = new Vector3(move.x, 0f, move.y);
+        Vector3 movement = new Vector3(move.x, 0f, move.y);
         
-            transform.Translate(movement * speed * Time.deltaTime, Space.World);
-        
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+
+        if (movement.sqrMagnitude > 0.001f) // Prevents rotation when stopping
+        {
+            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
+        }
     }
 
     void updateAnimationState()
     {
         bool isMoving = move.sqrMagnitude > 0;
 
-        Debug.Log("Before: Running = " + animator.GetBool("Running"));
+        //Debug.Log("Before: Running = " + animator.GetBool("Running"));
 
         animator.SetBool("Running", isMoving);
         animator.SetBool("Idle", !isMoving);
 
-       Debug.Log("After: Running = " + animator.GetBool("Running"));
+       //Debug.Log("After: Running = " + animator.GetBool("Running"));
     }
 }
