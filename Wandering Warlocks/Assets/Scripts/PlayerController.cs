@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     private Vector2 move;
     private Animator animator;
+    public Transform projectileSpawnPoint;
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 10;
 
     public void onMove(InputAction.CallbackContext context)
     {
@@ -21,7 +26,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         movePlayer();
-        updateAnimationState();
+        playRunningAnimation();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+           skill1();
+        }
     }
 
     void movePlayer()
@@ -37,15 +46,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void updateAnimationState()
+    void playRunningAnimation()
     {
         bool isMoving = move.sqrMagnitude > 0;
-
-        //Debug.Log("Before: Running = " + animator.GetBool("Running"));
 
         animator.SetBool("Running", isMoving);
         animator.SetBool("Idle", !isMoving);
 
-       //Debug.Log("After: Running = " + animator.GetBool("Running"));
+    }
+
+    void skill1()
+    {
+        animator.SetBool("Skill1", true);
+        StartCoroutine(ResetSkillBoolAfterDelay(0.3f));
+
+        var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        projectile.GetComponent<Rigidbody>().linearVelocity = projectileSpawnPoint.forward * projectileSpeed;
+    }
+
+    IEnumerator ResetSkillBoolAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.SetBool("Skill1", false);
     }
 }
