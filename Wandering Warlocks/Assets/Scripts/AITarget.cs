@@ -21,7 +21,7 @@ public class AITarget : MonoBehaviour
     void moveEnemy()
     {
         agent.SetDestination(target.position);
-        bool isMoving = agent.velocity.sqrMagnitude > 0.01f; // Small threshold to avoid jittering
+        bool isMoving = agent.velocity.sqrMagnitude > 0.01f;
         animator.SetBool("Running", isMoving);
     }
 }

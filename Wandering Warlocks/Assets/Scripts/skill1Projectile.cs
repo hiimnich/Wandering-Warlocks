@@ -9,7 +9,7 @@ public class skill1Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    void onCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         Destroy(collision.gameObject);
         Destroy(gameObject);
