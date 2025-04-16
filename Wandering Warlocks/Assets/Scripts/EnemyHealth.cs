@@ -16,19 +16,16 @@ public class EnemyHealth : MonoBehaviour
 
         GameObject bar = Instantiate(healthBarPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         healthBar = bar.transform;
+        healthBar.SetParent(transform);
 
         healthSlider = healthBar.GetComponentInChildren<Slider>();
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
     }
 
-    void LateUpdate()
+    void Update()
     {
-        if (healthBar != null)
-        {
-            healthBar.position = transform.position + Vector3.up * 2;
-            healthBar.rotation = Quaternion.Euler(90, 0, 0);
-        }
+        healthBar.position = transform.position + Vector3.up * 2;
     }
 
     public void TakeDamage(float amount)
@@ -45,6 +42,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
     }

@@ -16,13 +16,12 @@ public class PlayerController : MonoBehaviour
     {
         move = context.ReadValue<Vector2>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         movePlayer();
@@ -39,7 +38,7 @@ public class PlayerController : MonoBehaviour
         
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
-        if (movement.sqrMagnitude > 0.001f) // Prevents rotation when stopping
+        if (movement.sqrMagnitude > 0.001f)
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * 10f);
@@ -59,14 +58,20 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("Skill1", true);
         StartCoroutine(ResetSkillBoolAfterDelay(0.3f));
-
-        var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().linearVelocity = projectileSpawnPoint.forward * projectileSpeed;
+        StartCoroutine(FireProjectileAfterDelay(0.4f));
     }
 
     IEnumerator ResetSkillBoolAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         animator.SetBool("Skill1", false);
+    }
+
+    IEnumerator FireProjectileAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        projectile.GetComponent<Rigidbody>().linearVelocity = projectileSpawnPoint.forward * projectileSpeed;
     }
 }

@@ -249,11 +249,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf7a0c9d76b77a40af3104feac0641d, type: 3}
---- !u!1 &99677264 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2216459168459219167, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
-  m_PrefabInstance: {fileID: 5083516035433700774}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &226409805
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,49 +410,6 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
---- !u!1 &755840015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6166231222389374240, guid: 3618649fd7eb560488b9f21867411152, type: 3}
-  m_PrefabInstance: {fileID: 5190287418687594155}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &755840020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755840015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1285b433d8a2f84cb9829eec2366131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthBarPrefab: {fileID: 3845467637167999654, guid: 6f53bc9b35e176b4abee3eac6214b63c, type: 3}
---- !u!136 &755840021
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755840015}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &770596730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -882,21 +834,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5184218252647791965, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
   m_PrefabInstance: {fileID: 5083516035433700774}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1863161515805019922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99677264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f83ac6b6f1ebf4da1ec94546ddf259, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthSlider: {fileID: 464516855}
 --- !u!1001 &5083516035433700774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -917,6 +854,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2216459168459219167, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5184218252647791965, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18344863
@@ -927,7 +868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5184218252647791965, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.5959218
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 5184218252647791965, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -957,13 +898,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7076819201958861985, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
+      propertyPath: m_Name
+      value: PlayerMat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079198498074085049, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079198498074085049, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325890377113746372, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 464516855}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2216459168459219167, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1863161515805019922}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f6e36a54f10b8542a935342713a31ba, type: 3}
 --- !u!1001 &5190287418687594155
 PrefabInstance:
@@ -981,6 +935,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1863161515805019916}
+    - target: {fileID: 3063340682699266012, guid: 3618649fd7eb560488b9f21867411152, type: 3}
+      propertyPath: pushForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063340682699266012, guid: 3618649fd7eb560488b9f21867411152, type: 3}
+      propertyPath: damageAmount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6166231222389374240, guid: 3618649fd7eb560488b9f21867411152, type: 3}
       propertyPath: m_Name
       value: Goblin
@@ -995,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6834504960323921818, guid: 3618649fd7eb560488b9f21867411152, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.394232
+      value: 7.44
       objectReference: {fileID: 0}
     - target: {fileID: 6834504960323921818, guid: 3618649fd7eb560488b9f21867411152, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1028,13 +990,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6166231222389374240, guid: 3618649fd7eb560488b9f21867411152, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 755840020}
-    - targetCorrespondingSourceObject: {fileID: 6166231222389374240, guid: 3618649fd7eb560488b9f21867411152, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 755840021}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3618649fd7eb560488b9f21867411152, type: 3}
 --- !u!1001 &6502943396012792862
 PrefabInstance:
@@ -1133,6 +1089,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 407750817667476730, guid: d49d28b6327ea6e448e24b8072fa2c4f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 970119521084328696, guid: d49d28b6327ea6e448e24b8072fa2c4f, type: 3}
       propertyPath: m_Name
       value: ScreenSpaceCanvas
