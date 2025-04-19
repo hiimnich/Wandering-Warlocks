@@ -438,6 +438,7 @@
 "Assets/Scripts/EnemyHealth.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerHealth.cs"
+"Assets/Scripts/PlayerMana.cs"
 "Assets/Scripts/skill1Projectile.cs"
 "Assets/Unity Assets/BrokenVector/LowPolyDungeon/Demo Scenes/MouseCamLook.cs"
 "Assets/Unity Assets/BrokenVector/LowPolyDungeon/Demo Scenes/PlayerMovement.cs"

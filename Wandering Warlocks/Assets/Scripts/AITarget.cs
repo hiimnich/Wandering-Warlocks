@@ -42,7 +42,6 @@ public class AITarget : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damageAmount);
-            Debug.Log("Player took damage from Collision");
         }
 
         Rigidbody playerRb = player.GetComponent<Rigidbody>();

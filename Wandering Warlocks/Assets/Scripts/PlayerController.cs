@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Transform projectileSpawnPoint;
     public GameObject projectilePrefab;
     public float projectileSpeed = 10;
+    public PlayerMana playerMana;
+    public float skill1ManaCost = 20f;
 
     public void onMove(InputAction.CallbackContext context)
     {
@@ -20,22 +21,31 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (playerMana == null)
+        {
+            playerMana = GetComponent<PlayerMana>();
+        }
     }
 
     void Update()
     {
         movePlayer();
         playRunningAnimation();
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-           skill1();
+            if (playerMana != null && playerMana.HasEnoughMana(skill1ManaCost))
+            {
+                skill1();
+                playerMana.UseMana(skill1ManaCost);
+            }
         }
     }
 
     void movePlayer()
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
-        
         transform.Translate(movement * speed * Time.deltaTime, Space.World);
 
         if (movement.sqrMagnitude > 0.001f)
@@ -48,10 +58,8 @@ public class PlayerController : MonoBehaviour
     void playRunningAnimation()
     {
         bool isMoving = move.sqrMagnitude > 0;
-
         animator.SetBool("Running", isMoving);
         animator.SetBool("Idle", !isMoving);
-
     }
 
     void skill1()
@@ -70,7 +78,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator FireProjectileAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
         var projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().linearVelocity = projectileSpawnPoint.forward * projectileSpeed;
     }
