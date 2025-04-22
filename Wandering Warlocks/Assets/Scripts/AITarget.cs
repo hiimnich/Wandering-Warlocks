@@ -7,25 +7,53 @@ public class AITarget : MonoBehaviour
     public Transform target;
     private Animator animator;
 
+    public float detectionRadius = 10f;
     public float damageAmount;
     public float pushForce;
+
+    private Vector3 startPosition;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        startPosition = transform.position;
     }
 
     void Update()
     {
-        moveEnemy();
+        float distanceToPlayer = Vector3.Distance(transform.position, target.position);
+
+        if (distanceToPlayer <= detectionRadius)
+        {
+            ChasePlayer();
+        }
+        else
+        {
+            ReturnToStart();
+        }
     }
 
-    void moveEnemy()
+    void ChasePlayer()
     {
         agent.SetDestination(target.position);
         bool isMoving = agent.velocity.sqrMagnitude > 0.01f;
         animator.SetBool("Running", isMoving);
+    }
+
+    void ReturnToStart()
+    {
+        if (Vector3.Distance(transform.position, startPosition) > 0.1f)
+        {
+            agent.SetDestination(startPosition);
+            bool isMoving = agent.velocity.sqrMagnitude > 0.01f;
+            animator.SetBool("Running", isMoving);
+        }
+        else
+        {
+            agent.ResetPath();
+            animator.SetBool("Running", false);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -48,8 +76,6 @@ public class AITarget : MonoBehaviour
         if (playerRb != null)
         {
             Vector3 pushDirection = (player.transform.position - transform.position).normalized;
-            pushDirection.y = 0;
-
             playerRb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
             playerRb.linearVelocity = new Vector3(playerRb.linearVelocity.x, 0, playerRb.linearVelocity.z);
         }
@@ -58,11 +84,14 @@ public class AITarget : MonoBehaviour
         if (goblinRb != null)
         {
             Vector3 goblinPushDirection = (transform.position - player.transform.position).normalized;
-            goblinPushDirection.y = 0;
-
-            
             goblinRb.AddForce(goblinPushDirection * pushForce, ForceMode.Impulse);
             goblinRb.linearVelocity = new Vector3(goblinRb.linearVelocity.x, 0, goblinRb.linearVelocity.z);
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
