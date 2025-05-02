@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     private Slider healthSlider;
     private Transform healthBar;
 
+    public bool showHealthBar = true;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -21,6 +23,15 @@ public class EnemyHealth : MonoBehaviour
         healthSlider = healthBar.GetComponentInChildren<Slider>();
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+
+        if (!showHealthBar)
+        {
+            Canvas canvas = healthBar.GetComponentInChildren<Canvas>();
+            if (canvas != null)
+            {
+                canvas.enabled = false;
+            }
+        }
     }
 
     void Update()
@@ -32,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        healthSlider.value = currentHealth;
+        if (showHealthBar) healthSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {
@@ -42,7 +53,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
     }

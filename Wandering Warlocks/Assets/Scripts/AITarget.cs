@@ -65,29 +65,43 @@ public class AITarget : MonoBehaviour
     }
 
     void ApplyDamageAndPush(GameObject player)
+{
+    PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+    if (playerHealth != null)
     {
-        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(damageAmount);
-        }
-
-        Rigidbody playerRb = player.GetComponent<Rigidbody>();
-        if (playerRb != null)
-        {
-            Vector3 pushDirection = (player.transform.position - transform.position).normalized;
-            playerRb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-            playerRb.linearVelocity = new Vector3(playerRb.linearVelocity.x, 0, playerRb.linearVelocity.z);
-        }
-
-        Rigidbody goblinRb = GetComponent<Rigidbody>();
-        if (goblinRb != null)
-        {
-            Vector3 goblinPushDirection = (transform.position - player.transform.position).normalized;
-            goblinRb.AddForce(goblinPushDirection * pushForce, ForceMode.Impulse);
-            goblinRb.linearVelocity = new Vector3(goblinRb.linearVelocity.x, 0, goblinRb.linearVelocity.z);
-        }
+        playerHealth.TakeDamage(damageAmount);
     }
+
+    Rigidbody playerRb = player.GetComponent<Rigidbody>();
+    if (playerRb != null)
+    {
+        Vector3 pushDirection = (player.transform.position - transform.position);
+        pushDirection.y = 0; // Ignore vertical movement!
+        pushDirection = pushDirection.normalized;
+
+        playerRb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+
+        // Optional: stabilize vertical velocity if you really want no jump effect
+        Vector3 velocity = playerRb.linearVelocity;
+        velocity.y = 0;
+        playerRb.linearVelocity = velocity;
+    }
+
+    Rigidbody goblinRb = GetComponent<Rigidbody>();
+    if (goblinRb != null)
+    {
+        Vector3 goblinPushDirection = (transform.position - player.transform.position);
+        goblinPushDirection.y = 0; // Ignore vertical for goblin too
+        goblinPushDirection = goblinPushDirection.normalized;
+
+        goblinRb.AddForce(goblinPushDirection * pushForce, ForceMode.Impulse);
+
+        // Optional: stabilize vertical velocity
+        Vector3 goblinVelocity = goblinRb.linearVelocity;
+        goblinVelocity.y = 0;
+        goblinRb.linearVelocity = goblinVelocity;
+    }
+}
 
     void OnDrawGizmosSelected()
     {
