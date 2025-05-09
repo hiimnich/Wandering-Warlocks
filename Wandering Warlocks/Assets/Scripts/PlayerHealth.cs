@@ -49,4 +49,11 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player has died!");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        healthSlider.value = currentHealth;
+    }
 }

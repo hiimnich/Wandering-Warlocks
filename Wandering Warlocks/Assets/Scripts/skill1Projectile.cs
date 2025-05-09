@@ -21,10 +21,17 @@ public class skill1Projectile : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Damage Amount: " + damageAmount);
+        
         EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
             enemyHealth.TakeDamage(damageAmount);
+        }
+
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damageAmount);
         }
 
         StartCoroutine(ExplodeAndDestroy());
