@@ -12,6 +12,9 @@ public class EnemyHealth : MonoBehaviour
 
     public bool showHealthBar = true;
 
+    public GameObject victoryScreen;
+
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -30,6 +33,14 @@ public class EnemyHealth : MonoBehaviour
             if (canvas != null)
             {
                 canvas.enabled = false;
+            }
+        }
+
+        if (gameObject.CompareTag("Boss"))
+        {
+            if (victoryScreen != null)
+            {
+                victoryScreen.SetActive(false);
             }
         }
     }
@@ -55,5 +66,14 @@ public class EnemyHealth : MonoBehaviour
     {
         Destroy(healthBar.gameObject);
         Destroy(gameObject);
+
+        if (gameObject.CompareTag("Boss"))
+        {
+            if (victoryScreen != null)
+            {
+                victoryScreen.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
     }
 }

@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 27979cd0171c9fd45a90d828f3c2109f
   - enabled: 1
-    path: Assets/Scenes/The Dungeon.unity
+    path: Assets/Scenes/Normal Mode.unity
     guid: 1bf912b9f8baab0489fd62f6c317e8a1
+  - enabled: 1
+    path: Assets/Scenes/Hard Mode.unity
+    guid: 663be61c15d608841852f47ddb97e75a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

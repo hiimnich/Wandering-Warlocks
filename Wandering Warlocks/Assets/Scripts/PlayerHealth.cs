@@ -6,8 +6,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
-    
     public Slider healthSlider;
+    public GameObject gameOverPanel;
 
     void Start()
     {
@@ -18,6 +18,13 @@ public class PlayerHealth : MonoBehaviour
             healthSlider.maxValue = maxHealth;
             healthSlider.value = currentHealth;
         }
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+
+        Time.timeScale = 1f;
     }
 
     void Update()
@@ -46,8 +53,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Player has died!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void Heal(float amount)

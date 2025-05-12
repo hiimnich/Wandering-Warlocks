@@ -76,12 +76,11 @@ public class AITarget : MonoBehaviour
     if (playerRb != null)
     {
         Vector3 pushDirection = (player.transform.position - transform.position);
-        pushDirection.y = 0; // Ignore vertical movement!
+        pushDirection.y = 0;
         pushDirection = pushDirection.normalized;
 
         playerRb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
 
-        // Optional: stabilize vertical velocity if you really want no jump effect
         Vector3 velocity = playerRb.linearVelocity;
         velocity.y = 0;
         playerRb.linearVelocity = velocity;
@@ -91,12 +90,11 @@ public class AITarget : MonoBehaviour
     if (goblinRb != null)
     {
         Vector3 goblinPushDirection = (transform.position - player.transform.position);
-        goblinPushDirection.y = 0; // Ignore vertical for goblin too
+        goblinPushDirection.y = 0;
         goblinPushDirection = goblinPushDirection.normalized;
 
         goblinRb.AddForce(goblinPushDirection * pushForce, ForceMode.Impulse);
 
-        // Optional: stabilize vertical velocity
         Vector3 goblinVelocity = goblinRb.linearVelocity;
         goblinVelocity.y = 0;
         goblinRb.linearVelocity = goblinVelocity;
