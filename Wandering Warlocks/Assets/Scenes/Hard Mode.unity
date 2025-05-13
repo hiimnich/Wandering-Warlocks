@@ -18885,8 +18885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -562.8, y: 67.6}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -530.5, y: 67.6}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188694751
 MonoBehaviour:
@@ -18964,8 +18964,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 913167cece480b041bd2e165948a65f6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -111797,8 +111797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.693176, y: -27.748024}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -88, y: -27.748024}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1122083495
 MonoBehaviour:
@@ -111876,8 +111876,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9e128985ac35e29429f7b869c35b9820, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -157360,8 +157360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.20685, y: -27.748024}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 90.2, y: -29.6}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1592849450
 MonoBehaviour:
@@ -157439,8 +157439,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 913167cece480b041bd2e165948a65f6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -164095,8 +164095,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.20685, y: -27.748024}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 95, y: -30}
+  m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668039690
 MonoBehaviour:
@@ -164174,8 +164174,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 913167cece480b041bd2e165948a65f6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -173854,8 +173854,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -57.693176, y: -27.748024}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -88, y: -27.748024}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753774898
 MonoBehaviour:
@@ -173933,8 +173933,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9e128985ac35e29429f7b869c35b9820, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -184310,8 +184310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -674.7, y: 67.6}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -708.1, y: 67.6}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864510140
 MonoBehaviour:
@@ -184413,8 +184413,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9e128985ac35e29429f7b869c35b9820, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -196364,6 +196364,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 107609126056354043}
+    - target: {fileID: 3063340682699266012, guid: 3618649fd7eb560488b9f21867411152, type: 3}
+      propertyPath: damageAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6166231222389374240, guid: 3618649fd7eb560488b9f21867411152, type: 3}
       propertyPath: m_Name
       value: Goblin
@@ -212493,10 +212497,18 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8806634916008162468, guid: 3ee8e79f01c70c64c9d2174fd3f6cb02, type: 3}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8858222800206422662, guid: 3ee8e79f01c70c64c9d2174fd3f6cb02, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 107609126056354043}
+    - target: {fileID: 8858222800206422662, guid: 3ee8e79f01c70c64c9d2174fd3f6cb02, type: 3}
+      propertyPath: damageAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8858222800206422662, guid: 3ee8e79f01c70c64c9d2174fd3f6cb02, type: 3}
       propertyPath: detectionRadius
       value: 14
@@ -212949,6 +212961,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 25970
       objectReference: {fileID: 0}
+    - target: {fileID: 760693040074837321, guid: 4c1570c711152204faad46aaf95d0ce9, type: 3}
+      propertyPath: shootInterval
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 833328257617986367, guid: 4c1570c711152204faad46aaf95d0ce9, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -213025,6 +213041,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 107609126056354043}
+    - target: {fileID: 1999772137714951007, guid: 4c1570c711152204faad46aaf95d0ce9, type: 3}
+      propertyPath: damageAmount
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2067144947073952096, guid: 4c1570c711152204faad46aaf95d0ce9, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -213165,6 +213185,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1810774353}
+    - target: {fileID: 5182568810704255769, guid: 4c1570c711152204faad46aaf95d0ce9, type: 3}
+      propertyPath: maxHealth
+      value: 600
+      objectReference: {fileID: 0}
     - target: {fileID: 5182568810704255769, guid: 4c1570c711152204faad46aaf95d0ce9, type: 3}
       propertyPath: victoryScreen
       value: 
@@ -214304,6 +214328,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 107609126056354043}
+    - target: {fileID: 1989142724184793407, guid: 98a297ea48b38364883f58c4cad90b32, type: 3}
+      propertyPath: damageAmount
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1996456299295105409, guid: 98a297ea48b38364883f58c4cad90b32, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -215152,6 +215180,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 27628140}
+    - target: {fileID: 4025450515886628854, guid: 98a297ea48b38364883f58c4cad90b32, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 4038560687126462869, guid: 98a297ea48b38364883f58c4cad90b32, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -218048,6 +218080,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 107609126056354043}
+    - target: {fileID: 8986223659878337884, guid: 98a297ea48b38364883f58c4cad90b32, type: 3}
+      propertyPath: damageAmount
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 9037564157141939408, guid: 98a297ea48b38364883f58c4cad90b32, type: 3}
       propertyPath: m_Mesh
       value: 
